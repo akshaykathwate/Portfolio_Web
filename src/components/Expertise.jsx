@@ -44,7 +44,7 @@ const Expertise = () => {
           </div>
         </div>
         <div className="flex justify-center md:justify-start mt-5 md:mt-0  ">
-          <div className="text-xs md:text-sm mt-2 px-2 py-1 rounded-lg hover:text-white cursor-pointer font-bold font-serif text-center flex justify-center items-center m-7 p-3">
+          <div className="text-xs md:text-sm mt-2 px-2 py-1 rounded-lg hover:text-slate-900 cursor-pointer font-bold font-serif text-center flex justify-center items-center m-7 p-3">
             <div
               className="dark:text-slate-200 dark:bg-slate-900 
              rounded-2xl ring-2 ring-purple-500 ring-inset

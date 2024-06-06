@@ -16,9 +16,8 @@ const Resume = () => {
         text-center md:px-4 md:py-2 
         px-2 py-1
         rounded-lg text-xl font-serif 
-
         bg-blue-700 text-white 
-        hover:bg-blue-300
+        hover:bg-blue-500
         dark:text-slate-100 dark:bg-blue-500 dark:hover:bg-blue-700 
         "
       >
