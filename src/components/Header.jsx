@@ -17,19 +17,19 @@ const Header = () => {
   return (
     <>
       <div className="bg-gray-100 dark:text-slate-200 dark:bg-slate-800  md:rounded">
-        <div className="h-16 flex items-center justify-between px-4 md:px-16">
-          <div className="text-4xl md:text-2xl font-bold hover:text-orange-500 text-purple-500">
+        <div className="h-14 flex items-center justify-between px-4 md:px-16">
+          <div className="text-xl md:text-2xl font-bold font-serif hover:text-orange-500 text-purple-500">
             Portfolio
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex justify-end items-center space-x-4">
             <button
               onClick={() => {
                 setDarkmode(!darkmode);
               }}
               className={`${
                 darkmode ? "bg-white text-slate-600" : "bg-slate-800 text-white"
-              } ring-2 ring-blue-500 font-serif rounded-full p-2 md:text-2xl `}
+              }  rounded-full p-2 md:text-2xl `}
             >
               {darkmode ? <MdDarkMode /> : <MdOutlineDarkMode />}
             </button>

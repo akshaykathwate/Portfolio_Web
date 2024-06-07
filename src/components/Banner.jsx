@@ -3,6 +3,12 @@ import Typed from "typed.js";
 import BannerImage from "../assets/ProfileImg.jpg";
 import BannerBackground from "../assets/banner_wallpaper.svg";
 
+
+const Description = <div>To start a career in a challenging and growth-oriented organization to
+          effectively <br></br>use skills and excel as a professional to achieve
+          greater <br />
+          heights and recognition in career.</div>
+
 const Banner = () => {
   const el = useRef(null);
 
@@ -35,6 +41,7 @@ const Banner = () => {
     },
   ];
 
+
   return (
     <div
       style={{
@@ -43,7 +50,7 @@ const Banner = () => {
       }}
       className="main-container flex flex-col md:flex-row items-center dark:bg-slate-900 dark:text-slate-100 "
     >
-      <div className="w-full md:w-2/3 text-white text-center md:text-left p-6 md:p-10 ">
+      <div className="w-full  p-6 text-white text-center space-y-2 md:text-left md:w-2/3 md:p-10 md:space-y-3 ">
         <h3 className="text-xl font-semibold">Hi, I am</h3>
         <h1 className="text-3xl md:text-4xl font-bold">Akshay Kathwate</h1>
         <h3 className="text-lg">
@@ -53,11 +60,8 @@ const Banner = () => {
             ref={el}
           ></span>
         </h3>
-        <p className="text-md md:text-base">
-          To start a career in a challenging and growth-oriented organization to
-          effectively <br></br>use skills and excel as a professional to achieve
-          greater <br />
-          heights and recognition in career.
+        <p className="text-md md:text-base justify-between md:text-start">
+          {Description}
         </p>
         <div className="icons-container space-x-6 flex  items-center justify-center mt-4 md:justify-start ">
           {socialIcons.map((icon, index) => (
@@ -73,18 +77,9 @@ const Banner = () => {
             </a>
           ))}
         </div>
-        <div className="mt-6">
-          <a
-            className="rounded-full text-center md:px-4 md:py-2
-            py-1 px-2 font-serif text-xl  bg-blue-600 text-slate-300  hover:bg-slate-900"
-            href="/"
-          >
-            Contact
-          </a>
-        </div>
       </div>
 
-      <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0 ">
+      <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0 hidden md:block">
         <img
           src={BannerImage}
           alt="Profile"

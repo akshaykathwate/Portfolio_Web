@@ -6,19 +6,19 @@ const Resume = () => {
         title: "Resume",
       });
   return (
-    <div className="md:m-3 ">
+    <div className=" ">
       <a
         key={actionButton.id}
         href={actionButton.link}
         rel="noreferrer"
         target="_blank"
         className="
-        text-center md:px-4 md:py-2 
-        px-2 py-1
-        rounded-lg text-xl font-serif 
+        flex justify-center text-center md:p-3 
+        p-2
+        rounded-lg  font-serif 
         bg-blue-700 text-white 
         hover:bg-blue-500
-        dark:text-slate-100 dark:bg-blue-500 dark:hover:bg-blue-700 
+        dark:text-slate-100
         "
       >
         {actionButton.title}
