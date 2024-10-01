@@ -1,6 +1,6 @@
 import { useState } from "react";
 const Resume = () => {
-      const [actionButton, setActionButton] = useState({
+      const [actionButton] = useState({
         id: 1,
         link: "https://drive.google.com/file/d/1S6jJr6-LOQGTNz5ozhYLPPktwH_07EAW/view",
         title: "Resume",

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import BannerImage from "../assets/ProfileImg.jpg";
+import BannerImage from "../assets/ProfileImg2.jpg";
 import BannerBackground from "../assets/banner_wallpaper.svg";
 
 
@@ -16,9 +16,9 @@ const Banner = () => {
     const typed = new Typed(el.current, {
       strings: ["Frontend Developer", "Coder"],
       startDelay: 300,
-      typeSpeed: 100,
-      backSpeed: 100,
-      backDelay: 100,
+      typeSpeed: 70,
+      backSpeed: 70,
+      backDelay: 60,
       loop: true,
     });
     return () => {

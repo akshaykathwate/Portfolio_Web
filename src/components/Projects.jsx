@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const Services = () => {
-  const [services, setServices] = useState([
+const Projects = () => {
+  const [services] = useState([
     {
       icon: "fa-brands fa-react",
       title: "Shopping Cart",
@@ -72,4 +72,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Projects;

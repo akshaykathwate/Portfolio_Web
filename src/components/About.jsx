@@ -2,24 +2,25 @@ import { useState } from "react";
 import bannerImage from "../assets/laptop.jpg";
 
 const About = () => {
-  const [data, setData] = useState({
+  const [data] = useState({
     image: bannerImage,
     title: "Frontend Developer",
     desc1: `I'm a Aspiring Software Developer ...`,
-    desc2: `👉 I'm a 3rd student pursuing Computer Science Engineering from @PJLCE Nagpur.`,
-    desc3: "I have great interest in web Development created a Shopping cart Website. ",
+    desc2: `👉 I'm a 4th year student pursuing Computer Science Engineering from @PJLCE Nagpur.`,
+    desc3: "I have great interest in Java Development... ",
     actionButton: {
       title: "Read More",
       link: "/readmore",
     },
     about: {
       name: "Akshay Kathwate ",
-      skills: "Core Java | C| C++ | React |Javascript  ",
-      email: "Akshaykathwate14@gmail.com",
+      skills:
+        "Core Java| Servlet | JSP | JDBC |Spring MVC | Hibernate | Springboot | C++ | React | Tailwind |Javascript   ",
+      email: "Akshaykathwate1421@gmail.com",
       phone: "9172387421",
     },
   });
-    const [actionButton, setActionButton] = useState({
+    const [actionButton] = useState({
       id: 1,
       link: "https://drive.google.com/file/d/1S6jJr6-LOQGTNz5ozhYLPPktwH_07EAW/view",
       title: "Resume",

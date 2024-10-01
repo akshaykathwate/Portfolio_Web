@@ -1,15 +1,15 @@
 import About from "./components/About";
-import Banner from "./components/Banner";
+import Profile from "./components/Profile";
 import Expertise from "./components/Expertise";
 import Header from "./components/Header";
-import Services from "./components/Services";
+import Projects from "./components/Projects";
 function App() {
   return (
     <div>
       <Header />
-      <Banner />
+      <Profile />
       <About />
-      <Services />
+      <Projects />
       <Expertise />
     </div>
   );
