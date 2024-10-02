@@ -4,22 +4,23 @@ import Resume from "./Resume";
 const Expertise = () => {
   const skills = [
     "Core Java",
-    "C",
-    "C++",
-    "HTML",
-    "CSS",
+    "Spring MVC",
+    "Springboot",
+    "Hibernate",
+    "Servlet",
+    "JDBC",
     "JavaScript",
     "Tailwind",
     "React",
     "Material UI",
   ];
 
-  const myskills = skills.join(", ");
+  const myskills = skills.join(" | ");
 
   return (
     <div className="dark:bg-slate-900 dark:text-slate-200">
       <h1 className="text-2xl md:text-3xl font-bold underline text-center">
-        My Expertise
+        Skills
       </h1>
       <div
         style={{
@@ -52,7 +53,9 @@ const Expertise = () => {
               "
             >
               <h1 className="text-xl m-2">My Skills</h1>
-              <div className="m-2 p-6 md:p-10 font-serif text-md">{myskills}</div>
+              <div className="m-2 p-6 md:p-10 font-serif text-md">
+                {myskills}
+              </div>
             </div>
           </div>
         </div>

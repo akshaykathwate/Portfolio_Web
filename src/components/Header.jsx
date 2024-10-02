@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-gray-100 dark:text-slate-200 dark:bg-slate-800  md:rounded">
+      <div className="bg-gray-100 dark:text-slate-200 dark:bg-slate-800  md:rounded mr-3 ml-3 mb-3 p-3 rounded-lg">
         <div className="h-14 flex items-center justify-between px-4 md:px-16">
           <div className="text-xl md:text-2xl font-bold font-serif hover:text-orange-500 text-purple-500">
             Portfolio

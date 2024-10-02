@@ -3,22 +3,25 @@ import Typed from "typed.js";
 import BannerImage from "../assets/ProfileImg2.jpg";
 import BannerBackground from "../assets/banner_wallpaper.svg";
 
+const Description = (
+  <div>
+    To start a career in a challenging and growth-oriented organization to
+    effectively <br />
+    use skills and excel as a professional to achieve greater <br />
+    heights and recognition in career.
+  </div>
+);
 
-const Description = <div>To start a career in a challenging and growth-oriented organization to
-          effectively <br></br>use skills and excel as a professional to achieve
-          greater <br />
-          heights and recognition in career.</div>
-
-const Banner = () => {
+const Profile = () => {
   const el = useRef(null);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Frontend Developer", "Coder"],
+      strings: ["Java Developer", "Frontend Developer", "Coder"],
       startDelay: 300,
-      typeSpeed: 70,
-      backSpeed: 70,
-      backDelay: 60,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 100,
       loop: true,
     });
     return () => {
@@ -41,55 +44,55 @@ const Banner = () => {
     },
   ];
 
-
   return (
     <div
       style={{
         backgroundImage: `url(${BannerBackground})`,
         backgroundSize: "cover",
+        transition: "all 0.3s ease-in-out",
       }}
-      className="main-container flex flex-col md:flex-row items-center dark:bg-slate-900 dark:text-slate-100 "
+      className="main-container flex items-center justify-between dark:bg-slate-900 dark:text-slate-100 rounded-md p-6 md:p-10 shadow-lg"
     >
-      <div className="w-full  p-6 text-white text-center space-y-2 md:text-left md:w-2/3 md:p-10 md:space-y-3 ">
-        <h3 className="text-xl font-semibold">Hi, I am</h3>
-        <h1 className="text-3xl md:text-4xl font-bold">Akshay Kathwate</h1>
-        <h3 className="text-lg">
+      <div className="w-full text-white text-center md:text-left space-y-4">
+        <h3 className="text-xl font-semibold animate-fade-in-up dark:text-black">
+          Hi, I am
+        </h3>
+        <h2 className="text-4xl md:text-5xl font-bold transition-all hover:tracking-wide duration-300 text-slate-900">
+          Akshay Kathwate
+        </h2>
+        <h3 className="text-lg  ">
           I Am
           <span
-            className="m-2 text-2xl font-bold text-blue-300 underline"
+            className="ml-2 text-2xl font-bold text-orange-200 animate-pulse rounded-lg pt-1 p-2 "
             ref={el}
           ></span>
         </h3>
-        <p className="text-md md:text-base justify-between md:text-start">
+        <p className="text-md md:text-lg mt-2  dark:text-black text-md ">
           {Description}
         </p>
-        <div className="icons-container space-x-6 flex  items-center justify-center mt-4 md:justify-start ">
+        <div className="icons-container flex space-x-6 items-center justify-center md:justify-start mt-6">
           {socialIcons.map((icon, index) => (
             <a
               key={index}
               href={icon.link}
               target="_blank"
               rel="noreferrer"
-              className={`cursor-pointer hover:bg-orange-400 md:h-14 md:w-14 h-12 w-12 rounded-full bg-slate-900 flex 
-              justify-center items-center`}
+              className="cursor-pointer transition-transform hover:scale-110 transform duration-300 hover:bg-orange-400 md:h-14 md:w-14 h-12 w-12 rounded-full bg-slate-900 flex justify-center items-center shadow-lg"
             >
               <i className={`fa ${icon.iconClass} text-3xl`}></i>
             </a>
           ))}
         </div>
       </div>
-
-      <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0 hidden md:block">
+      <div className="hidden md:block w-full md:w-1/2 justify-center">
         <img
           src={BannerImage}
           alt="Profile"
-          className="rounded-full w-1/2 md:w-3/4 shadow-md
-           dark:bg-slate-900 dark:text-slate-100 mt-5
-           mb-5 shadow-sky-600 hover:shadow-orange-600"
+          className="rounded-full w-1/2 md:w-3/4 shadow-md dark:bg-slate-900 dark:text-slate-100 mt-5 mb-5 shadow-sky-600 hover:shadow-orange-600 transform transition-all duration-300 hover:scale-105"
         />
       </div>
     </div>
   );
 };
 
-export default Banner;
+export default Profile;

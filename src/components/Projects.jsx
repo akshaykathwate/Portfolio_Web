@@ -3,16 +3,19 @@ import { useState } from "react";
 const Projects = () => {
   const [services] = useState([
     {
-      icon: "fa-brands fa-react",
       title: "Shopping Cart",
       description: `A React Shopping Cart Website With Home and Cart Sections ...`,
       link: `https://shoppingcartak14.netlify.app`,
     },
     {
-      icon: "fa-brands fa-react",
       title: "Background Changer",
       description: `The "BG_Changer designed to allow users to change the background color of the webpage dynamically.`,
       link: `https://bgchangerweb.netlify.app/`,
+    },
+    {
+      title: "food_Restro",
+      description: `Our Restaurant Website, THE food Restraurent Website is your gateway to a delightful culinary journey. Webpage offers a Beautiful User interface.`,
+      link: `https://food-restro.netlify.app/`,
     },
   ]);
 
@@ -38,9 +41,6 @@ const Projects = () => {
               index + 1
             } space-y-4 shadow-lg rounded-xl bg-slate-200 text-center p-5 hover:bg-gray-100 dark:bg-slate-900 dark:text-slate-100 dark:shadow-purple-600`}
           >
-            <i
-              className={`fa ${service.icon} text-2xl md:text-4xl cursor-pointer`}
-            ></i>
             <h1 className="text-2xl md:text-4xl">{service.title}</h1>
             <p className="md:block p-3">
               {showMore[index]
