@@ -15,16 +15,16 @@ const About = () => {
     about: {
       name: "Akshay Kathwate ",
       skills:
-        "Core Java| Servlet | JSP | JDBC |Spring MVC | Hibernate | Springboot | C++ | React | Tailwind |Javascript   ",
+        "Core Java| Servlet | JSP | JDBC |Spring MVC | Hibernate | Springboot | C++ | React |Javascript",
       email: "Akshaykathwate1421@gmail.com",
       phone: "9172387421",
     },
   });
-    const [actionButton] = useState({
-      id: 1,
-      link: "https://drive.google.com/file/d/1S6jJr6-LOQGTNz5ozhYLPPktwH_07EAW/view",
-      title: "Resume",
-    });
+  const [actionButton] = useState({
+    id: 1,
+    link: "https://drive.google.com/file/d/1t4Shb0t5JMupoO5-Ry2vPPlIy9aZwI1i/view",
+    title: "Resume",
+  });
 
   return (
     <div className="bg-gray-100  dark:bg-slate-800 dark:text-slate-100">
@@ -38,7 +38,9 @@ const About = () => {
           <div className="space-y-5 w-11/12 md:w-2/3 text-center md:text-left">
             <h1 className="text-3xl md:text-4xl font-semibold">{data.title}</h1>
             <p className="text-sm md:text-base">{data.desc1}</p>
-            <p className="text-sm md:text-base text-black dark:text-slate-100">{data.desc2}</p>
+            <p className="text-sm md:text-base text-black dark:text-slate-100">
+              {data.desc2}
+            </p>
             <p className="text-sm md:text-base">{data.desc3}</p>
           </div>
         </div>

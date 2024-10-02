@@ -1,10 +1,10 @@
 import { useState } from "react";
 const Resume = () => {
-      const [actionButton] = useState({
-        id: 1,
-        link: "https://drive.google.com/file/d/1S6jJr6-LOQGTNz5ozhYLPPktwH_07EAW/view",
-        title: "Resume",
-      });
+  const [actionButton] = useState({
+    id: 1,
+    link: "https://drive.google.com/file/d/1t4Shb0t5JMupoO5-Ry2vPPlIy9aZwI1i/view?usp=drive_link",
+    title: "Resume",
+  });
   return (
     <div className=" ">
       <a
@@ -25,6 +25,6 @@ const Resume = () => {
       </a>
     </div>
   );
-}
+};
 
-export default Resume
+export default Resume;
