@@ -2,7 +2,7 @@ import { useState } from "react";
 const Resume = () => {
   const [actionButton] = useState({
     id: 1,
-    link: "https://drive.google.com/file/d/16lMstuqF3PPLAVHh2AeKGCMdbCx8fG1E/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/1K8q8lUZ9ApftxhLoK-NLroiITNlEBXGt/view?usp=drive_link",
     title: "Resume",
   });
   return (
