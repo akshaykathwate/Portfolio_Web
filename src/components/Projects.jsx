@@ -1,69 +1,77 @@
 import { useState } from "react";
+import Button from "./Button";
+import Underline from "./Underline";
 
 const Projects = () => {
   const [services] = useState([
     {
       title: "Shopping Cart",
-      description: `A React Shopping Cart Website With Home and Cart Sections ...`,
+      description: `Developed a responsive shopping cart application using React, JavaScript, and Tailwind CSS, focusing on delivering a seamless user experience.Implemented state management to handle dynamic updates to the cart, ensuring real-time calculation of totals and item counts. Leveraged TailwindCSS for efficient and consistent styling, resulting in a clean, modern UI that enhances usability.`,
       link: `https://shoppingcartak14.netlify.app`,
-    },
-    {
-      title: "Background Changer",
-      description: `The "BG_Changer designed to allow users to change the background color of the webpage dynamically.`,
-      link: `https://bgchangerweb.netlify.app/`,
+      technologies: "• Technologies Used: React, JavaScript, TailwindCSS",
     },
     {
       title: "food_Restro",
-      description: `Our Restaurant Website, THE food Restraurent Website is your gateway to a delightful culinary journey. Webpage offers a Beautiful User interface.`,
+      description: `The Food Restaurant Website is a basic project built with HTML, CSS, and JavaScript, offering a beautiful user interface for a delightful browsing experience.`,
       link: `https://food-restro.netlify.app/`,
+      technologies: "• Technologies Used: HTML,CSS,JavaScript",
     },
   ]);
 
-  const [showMore, setShowMore] = useState({});
+  // Function to handle "Show More" / "Show Less"
+  const [showMore, setShowMore] = useState(Array(services.length).fill(false));
 
   const toggleShowMore = (index) => {
-    setShowMore((prevShowMore) => ({
-      ...prevShowMore,
-      [index]: !prevShowMore[index],
-    }));
+    const updatedShowMore = [...showMore];
+    updatedShowMore[index] = !updatedShowMore[index];
+    setShowMore(updatedShowMore);
   };
 
   return (
-    <div className="main-container py-14 dark:bg-slate-900 dark:text-slate-100">
-      <h1 className="text-center underline font-bold text-2xl md:text-3xl">
-        My Projects
+    <div className="bg-gray-100 dark:bg-slate-900 dark:text-slate-200 py-14">
+      <h1 className="text-center font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8">
+        <Underline text="My Projects" />
       </h1>
-      <div className="service-container flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-5 md:p-10 justify-evenly m-8 md:m-0">
+      <div className="service-container grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-14">
         {services.map((service, index) => (
-          <div
-            key={index}
-            className={`service${
-              index + 1
-            } space-y-4 shadow-lg rounded-xl bg-slate-200 text-center p-5 hover:bg-gray-100 dark:bg-slate-900 dark:text-slate-100 dark:shadow-purple-600`}
-          >
-            <h1 className="text-2xl md:text-4xl">{service.title}</h1>
-            <p className="md:block p-3">
-              {showMore[index]
-                ? service.description
-                : `${service.description.split(" ").slice(0, 8).join(" ")}...`}
-              <button
-                className="text-blue-500 cursor-pointer"
-                onClick={() => toggleShowMore(index)}
-              >
-                {showMore[index] ? "Show Less" : "Show More"}
-              </button>
-            </p>
-
-            <div className="m-5">
-              <a
-                href={service.link}
-                rel="noreferrer"
-                target="_blank"
-                className="bg-black-500 dark:bg-slate-800 font-serif rounded-full px-5 p-3  text-lg"
-              >
-                Visit{" "}
-                <i className="fa-solid fa-arrow-up-right-from-square ml-1"></i>
-              </a>
+          <div key={index} className="service-card">
+            <div className="card bg-white dark:bg-slate-800 shadow-lg rounded-xl overflow-hidden">
+              <div className="card-header p-6 bg-slate-700 text-white">
+                <h2 className="text-xl md:text-2xl font-semibold">
+                  <Underline text={service.title} />
+                </h2>
+              </div>
+              <div className="card-body p-6">
+                <p className="text-sm md:text-base text-gray-700 dark:text-slate-300 mb-4">
+                  {showMore[index]
+                    ? service.description
+                    : `${service.description
+                        .split(" ")
+                        .slice(0, 20)
+                        .join(" ")}...`}
+                </p>
+                <button
+                  onClick={() => toggleShowMore(index)}
+                  className="text-blue-500 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 mb-4"
+                >
+                  {showMore[index] ? "Show Less" : "Show More"}
+                </button>
+                <p className="text-sm text-gray-600 dark:text-slate-400 mb-4">
+                  {service.technologies}
+                </p>
+                <div className="flex justify-between items-center mt-4">
+                  <Button text="Visit" link={service.link} />
+                  <a
+                    href={service.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-300"
+                  >
+                    <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
+                    <Underline text=" View Project" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ))}
