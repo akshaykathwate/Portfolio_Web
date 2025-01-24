@@ -1,5 +1,5 @@
-import Underline from "./Underline";
 import { CgMail } from "react-icons/cg";
+import Underline from "./Underline";
 
 const Footer = () => {
   return (
@@ -26,7 +26,7 @@ const Footer = () => {
             >
               <Underline
                 text="Linkedin"
-                link={`"www.linkedin.com/in/akshaykathwate`}
+                link={`www.linkedin.com/in/akshaykathwate`}
               />
             </a>
             <a
