@@ -3,6 +3,7 @@ import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import Button from "./Button";
 import Underline from "./Underline";
 
+
 const Header = () => {
   let [darkmode, setDarkmode] = useState(false);
 
@@ -47,9 +48,9 @@ const Header = () => {
       </div> */}
       {/* End of commented section */}
 
-      <div className="navbar bg-slate-100 flex lg:justify-around">
+      <div className="navbar bg-slate-100 dark:bg-slate-800 flex lg:justify-around">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl"><Underline text="Portfolio"/></a>
+          <a className="btn  text-xl"><Underline text="Portfolio"/></a>
         </div>
         <div className="flex justify-end items-center space-x-4">
           <button

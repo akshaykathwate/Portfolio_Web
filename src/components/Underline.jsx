@@ -1,6 +1,6 @@
 import "./underline.css";
 
-const underline = ({ text, link }) => {
+const Underline = ({ text, link }) => {
   return (
     <a href={link || "#"} className="text-underline py-1">
       {text}
@@ -8,4 +8,4 @@ const underline = ({ text, link }) => {
   );
 };
 
-export default underline;
+export default Underline;

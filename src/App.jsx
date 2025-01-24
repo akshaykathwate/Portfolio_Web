@@ -1,9 +1,10 @@
 import About from "./components/About";
 import Profile from "./components/Profile";
-import Skills from "./components/Skills";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
+import Expertise from "./components/Expertise";
+import Footer from "./components/Footer";
 function App() {
   return (
     <div>
@@ -12,7 +13,10 @@ function App() {
       <About />
       <Timeline />
       <Projects />
-      <Skills />
+      <Expertise />
+      
+      <Footer/>
+
     </div>
   );
 }

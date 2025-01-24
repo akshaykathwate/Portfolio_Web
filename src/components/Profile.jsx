@@ -36,7 +36,7 @@ const Profile = () => {
   ];
 
   return (
-    <div className="main-container flex items-center justify-center md:justify-between dark:bg-gray-800 dark:text-white bg-gray-100 p-6 md:p-10 rounded-lg shadow-lg">
+    <div className="main-container flex items-center justify-center md:justify-between dark:bg-gray-800 dark:text-white bg-gray-100 p-6 md:p-10  shadow-lg">
       <div className="w-full text-center md:text-left space-y-4">
         <h3 className="text-xl font-semibold animate-fade-in-up">Hi, I am</h3>
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white transition-all hover:tracking-wide duration-300">
