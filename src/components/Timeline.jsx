@@ -22,7 +22,7 @@ const Timeline = () => {
           <div className="flex justify-start items-center gap-2">
             {" "}
             <MdCastForEducation />
-            <Underline text="Experience :" />
+            <Underline text="Education :" />
           </div>
         </div>
         <ul className="timeline timeline-vertical lg:timeline-horizontal">
