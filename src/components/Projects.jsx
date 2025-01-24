@@ -5,6 +5,15 @@ import Underline from "./Underline";
 const Projects = () => {
   const [services] = useState([
     {
+      title: "Video Streaming Application",
+      description: `Developed a scalable video streaming application leveraging Spring Boot, React, and FFmpeg, with video chunking for seamless playback. Integrated
+HLS.js and Video.js for adaptive streaming and a user-friendly interface styled with Tailwind CSS. Designed for high performance and cross-platform
+compatibility, enabling efficient video delivery.`,
+      link: `github.com/akshaykathwate/spring-video-stream`,
+      technologies:
+        "• Technologies Used: Springboot , ffmpeg, Mysql, Reactjs, videojs, hlsjs, Tailwind CSS",
+    },
+    {
       title: "Shopping Cart",
       description: `Developed a responsive shopping cart application using React, JavaScript, and Tailwind CSS, focusing on delivering a seamless user experience.Implemented state management to handle dynamic updates to the cart, ensuring real-time calculation of totals and item counts. Leveraged TailwindCSS for efficient and consistent styling, resulting in a clean, modern UI that enhances usability.`,
       link: `https://shoppingcartak14.netlify.app`,
@@ -68,7 +77,7 @@ const Projects = () => {
                     className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-300"
                   >
                     <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
-                    <Underline text=" View Project" />
+                    <Underline text=" View Project" link={service.link} />
                   </a>
                 </div>
               </div>
