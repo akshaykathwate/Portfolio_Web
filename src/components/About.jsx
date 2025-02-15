@@ -1,69 +1,95 @@
-import { useState } from "react";
-import bannerImage from "../assets/laptop.jpg";
+import { motion } from "framer-motion";
 import Underline from "./Underline";
 
 const About = () => {
-  const [data] = useState({
-    image: bannerImage,
-    title: "Aspiring Java Developer",
+  const data = {
+    title: "Aspiring Java Developer...",
     desc1: `I am an aspiring software developer with a strong foundation in Java and a passion for building efficient, user-friendly applications.`,
-    desc2: `🎓 Currently, I am pursuing a Bachelor's degree in Computer Science Engineering at Priyadarshini J.L. College of Engineering, Nagpur.`,
-    desc3: `I am a detail-oriented and highly motivated individual eager to explore innovative technologies, gain hands-on industry experience, and continuously enhance my skills. My focus lies in delivering impactful solutions that bridge creativity and functionality.`,
+    desc2: `🎓 Currently pursuing a Bachelor's degree in Computer Science Engineering at Priyadarshini J.L. College of Engineering, Nagpur.`,
+    desc3: `I am detail-oriented and highly motivated to explore innovative technologies, gain hands-on industry experience, and continuously enhance my skills. My goal is to create impactful solutions that bridge creativity and functionality.`,
     about: {
       name: "Akshay Kathwate",
-      skills:
-        "Core Java | Servlet | JSP | JDBC | Spring MVC | Hibernate | Spring Boot | C++ | React | JavaScript",
       email: "Akshaykathwate1421@gmail.com",
     },
-  });
+  };
+
+  const skills = [
+    "Core Java",
+    "Servlet",
+    "JSP",
+    "JDBC",
+    "Spring MVC",
+    "Hibernate",
+    "Spring Boot",
+    "C++",
+    "React",
+    "JavaScript",
+  ];
 
   return (
-    <div className="bg-gray-100 dark:bg-slate-800 dark:text-slate-100 py-12 px-6">
-      {/* Heading Section */}
-      <div className="mb-8">
-        <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-white">
-          <Underline text="About Me" />
-        </h1>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white py-16 px-6 min-h-screen flex flex-col justify-center items-center"
+    >
+      <motion.h1
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center text-slate-200 text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
+      >
+        <Underline text="About Me" />
+      </motion.h1>
+
+      <div className="w-full max-w-3xl mt-10 space-y-6 text-center md:text-left">
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl md:text-xl font-bold bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text"
+        >
+          {data.title}
+        </motion.h2>
+        <p className="text-lg leading-relaxed text-gray-300">{data.desc1}</p>
+        <p className="text-lg leading-relaxed text-gray-300">{data.desc2}</p>
+        <p className="text-lg leading-relaxed text-gray-300">{data.desc3}</p>
       </div>
 
-      {/* Main Content */}
-      <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
-        {/* Left Section */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-6 px-4">
-          <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white">
-            {data.title}
-          </h1>
-          <p className="text-base md:text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
-            {data.desc1}
-          </p>
-          <p className="text-base md:text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
-            {data.desc2}
-          </p>
-          <p className="text-base md:text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
-            {data.desc3}
-          </p>
-        </div>
-
-        {/* Right Section */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-6 px-4">
-          <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white">
-            <Underline text={data.about.name} />
-          </h1>
-          <p className="text-lg md:text-xl font-medium text-blue-600 dark:text-blue-300 text-center md:text-left">
-            {data.about.skills}
-          </p>
-          <p className="text-base md:text-lg text-gray-700 dark:text-slate-300">
-            <span className="font-semibold">Email:</span>{" "}
-            <a
-              href={`mailto:${data.about.email}`}
-              className="text-blue-500 dark:text-blue-300 hover:underline"
+      <div className="w-full max-w-3xl mt-10 text-center md:text-left">
+        <motion.h3
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl text-slate-200 font-semibold bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text"
+        >
+          <Underline text={data.about.name} />
+        </motion.h3>
+        <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
+          {skills.map((skill, index) => (
+            <motion.span
+              key={index}
+              whileHover={{ scale: 1.2}}
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md cursor-pointer transition-transform"
             >
-              {data.about.email}
-            </a>
-          </p>
+              {skill}
+            </motion.span>
+          ))}
         </div>
+        <motion.p
+          className="text-lg mt-4 text-gray-300"
+          whileHover={{ scale: 1.05 }}
+        >
+          <span className="font-semibold">Email:</span>{" "}
+          <a
+            href={`mailto:${data.about.email}`}
+            className="text-blue-400 hover:underline transition-all"
+          >
+            {data.about.email}
+          </a>
+        </motion.p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

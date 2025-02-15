@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import Typed from "typed.js";
+import { SiHackerrank } from "react-icons/si"; // Import HackerRank Icon
 import BannerImage from "../assets/ProfileImg2.jpg";
 
-// Profile Component
 const Profile = () => {
   const el = useRef(null);
 
@@ -15,9 +16,7 @@ const Profile = () => {
       backDelay: 100,
       loop: true,
     });
-    return () => {
-      typed.destroy();
-    };
+    return () => typed.destroy();
   }, []);
 
   const socialIcons = [
@@ -36,16 +35,21 @@ const Profile = () => {
   ];
 
   return (
-    <div className="main-container flex items-center justify-center md:justify-between dark:bg-gray-800 dark:text-white bg-gray-100 p-6 md:p-10  shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="main-container flex flex-wrap md:flex-nowrap items-center justify-center md:justify-between dark:bg-gray-800 dark:text-white bg-gray-100 p-6 md:p-10 pt-20 min-h-screen"
+    >
       <div className="w-full text-center md:text-left space-y-4">
-        <h3 className="text-xl font-semibold animate-fade-in-up">Hi, I am</h3>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white transition-all hover:tracking-wide duration-300">
+        <h3 className="text-xl font-semibold">Hi, I am</h3>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white hover:tracking-wide transition-all duration-300">
           Akshay Kathwate
         </h2>
         <h3 className="text-lg">
           I Am{" "}
           <span
-            className="ml-2 text-2xl font-bold text-orange-500 animate-pulse rounded-lg pt-1 p-2 "
+            className="ml-2 text-2xl font-bold text-orange-500 animate-pulse rounded-lg pt-1 p-2"
             ref={el}
           ></span>
         </h3>
@@ -55,28 +59,39 @@ const Profile = () => {
           problem-solving, I aim to contribute to innovative projects while
           growing my technical skills.
         </p>
+
+
+        {/* Social Icons */}
         <div className="icons-container flex space-x-6 items-center justify-center md:justify-start mt-6">
           {socialIcons.map((icon, index) => (
-            <a
+            <motion.a
               key={index}
               href={icon.link}
               target="_blank"
               rel="noreferrer"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
               className="cursor-pointer transition-transform hover:scale-110 transform duration-300 hover:bg-orange-400 md:h-14 md:w-14 h-12 w-12 rounded-full bg-gray-900 dark:bg-gray-700 flex justify-center items-center shadow-lg"
             >
               <i className={`fa ${icon.iconClass} text-3xl text-white`}></i>
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>
-      <div className="hidden md:block w-full md:w-1/2 justify-center">
+
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="hidden md:block w-full md:w-1/2 flex justify-center"
+      >
         <img
           src={BannerImage}
           alt="Profile"
-          className="rounded-full w-1/2 md:w-3/4 shadow-md dark:bg-slate-900 dark:text-slate-100 mt-5 mb-5 shadow-sky-600 hover:shadow-orange-600 transform transition-all duration-300 hover:scale-105"
+          className="rounded-full w-3/4 shadow-md dark:bg-slate-900 dark:text-slate-100 mt-5 mb-5 shadow-sky-600 hover:shadow-orange-600 transform transition-all duration-300 hover:scale-105"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
